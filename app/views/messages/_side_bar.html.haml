@@ -1,13 +1,13 @@
 .side-header
   .side-header__box
-    .side-header__box--user-name
-      mi
-  .side-header__menu
-    .side-header__menu--icon
-      .side-header__menu--create-group
-        creategroup
-      .side-header__menu--edit-profile
-        editprofile
+    .side-header__box__user-name
+      user-name
+    =link_to "#", class: "side-header__box__menu" do
+      = icon('fa', 'edit', class: "side-header__box__menu side-header__box__menu--new_group")
+      %span<>
+    =link_to "#", class: "side-header__menu" do
+      = icon('fa', 'cog', class: "side-header__box__menu side-header__box__menu--edit_user")
+      %span<>
 
 .groups
   .groups__group

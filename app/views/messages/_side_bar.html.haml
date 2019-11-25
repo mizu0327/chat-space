@@ -1,17 +1,19 @@
-.side-header
-  .side-header__box
-    .side-header__box__user-name
-      user-name
-    =link_to "#", class: "side-header__box__menu" do
-      = icon('fa', 'edit', class: "side-header__box__menu side-header__box__menu--new_group")
-      %span<>
-    =link_to "#", class: "side-header__menu" do
-      = icon('fa', 'cog', class: "side-header__box__menu side-header__box__menu--edit_user")
-      %span<>
+.side-bar
+  .side-bar__header
+    .side-bar__header__box
+      .side-bar__header__box__user-name
+        user-name
+      .side-bar__header__box__menu
+        =link_to "#" do
+          = icon('fa', 'edit', class: "side-bar__header__box__menu--new_group")
+          %span<>
+        =link_to "#" do
+          = icon('fa', 'cog', class: "side-bar__header__box__menu--edit_user")
+          %span<>
 
-.groups
-  .groups__group
-    .groups__group--name
-      test
-    .groups__group--latest-message
-      newest message
+  .side-bar__groups
+    .side-bar__groups__group
+      .side-bar__groups__group--name
+        test
+      .side-bar__groups__group--latest-message
+        newest message

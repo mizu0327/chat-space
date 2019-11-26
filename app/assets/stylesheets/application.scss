@@ -1,9 +1,13 @@
 @import "./reset";
 @import "font-awesome-sprockets";
 @import "./font-awesome";
-@import "user";
 @import "config/colors";
 @import "modules/flash";
+@import "main_chat";
+@import "side_bar";
+@import "user";
+@import "group";
+
 
 .wrapper {
   display: flex;

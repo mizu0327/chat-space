@@ -11,6 +11,7 @@
       justify-content: space-between;
       margin: auto 20px auto;
       color: #ffffff;
+      width: 100%;
       &__user-name {
         flex-direction: row;
         display: inline-block;
@@ -29,7 +30,6 @@
       }
     }
   }
-
 
   &__groups {
     background-color: #2f3e51;

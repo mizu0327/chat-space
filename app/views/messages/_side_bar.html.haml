@@ -4,7 +4,7 @@
       .side-bar__header__box__user-name
         = current_user.name
       .side-bar__header__box__menu
-        =link_to "#" do
+        =link_to new_group_path do
           = icon('fa', 'edit', class: "side-bar__header__box__menu--new_group")
           %span<>
         =link_to edit_user_path(current_user) do
@@ -12,9 +12,11 @@
           %span<>
 
   .side-bar__groups
-    .side-bar__groups__group
-      .side-bar__groups__group--name
-        test
-      .side-bar__groups__group--latest-message
-        newest message
+    - current_user.group.each do |group|
+      .side-bar__groups__group
+        = link_to group_messages_path(group) do
+        .side-bar__groups__group--name
+          = group.name
+        .side-bar__groups__group--latest-message
+          メッセージはまだありません
 

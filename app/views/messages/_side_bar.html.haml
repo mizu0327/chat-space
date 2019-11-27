@@ -12,11 +12,10 @@
           %span<>
 
   .side-bar__groups
-    - current_user.group.each do |group|
+    - current_user.groups.each do |group|
       .side-bar__groups__group
         = link_to group_messages_path(group) do
-        .side-bar__groups__group--name
-          = group.name
-        .side-bar__groups__group--latest-message
-          メッセージはまだありません
-
+          .side-bar__groups__group--name
+            = group.name
+          .side-bar__groups__group--latest-message
+            = group.show_last_message

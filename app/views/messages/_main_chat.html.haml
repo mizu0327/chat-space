@@ -2,9 +2,10 @@
   .main_chat__main-header
     .main_chat__main-header__left-box
       .main_chat__main-header__left-box__current-group
-        group name
+        = group.name
       .main_chat__main-header__left-box__member-list
         Member:
+        = user.name
         .main_chat__main-header__left-box__member-list__member
           someone
     .main_chat__main-header__edit-btn
@@ -24,8 +25,10 @@
   .main_chat__message_form
     .main_chat__message_form__new-message
       .main_chat__message_form__new-message__input-box
-        %input(placeholder="type a message" class="message-text" type="text" name="message")/
-        %label{class: "image"}
-          = icon('fa', 'images')
-          %input{type: "file", class:"open-file"}/
-      %input(type="submit" value="Send" class="submit-btn")/
+        = form_for [@group, @message] do |f|
+        = f.text_field :content, class: 'message-text', placeholder: 'type a message'
+        .form__mask
+          = f.label :image, class: 'image' do
+            = icon('fa', 'images', class: 'open-file')
+            = f.file_field :image, class: 'hidden'
+        = f.submit 'Send', class: 'submit-btn'

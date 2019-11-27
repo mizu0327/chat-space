@@ -73,39 +73,35 @@
     z-index: 1;
     &__new-message {
       display: flex;
-      justify-content: space-between;
       &__input-box {
-        background-color: #ffffff;
         height: 50px;
-        width: 100%;
+        background-color: #ffffff;
         margin-right: 15px;
         position: relative;
-        display: flex;
         .message-text {
           height: 50px;
           width: 100%;
           font-size: 16px;
           color: #434A54;
-          padding: 0px 40px 0px 10px;
+          padding: 0px 10px 0px 10px;
           border-style: none;
         }
-        .image {
+        .form__mask {
           position: absolute;
           top: 10px;
           right: 10px;
-          .open-file {
+          .hidden {
             display: none;
           }
         }
       }
-      .submit-btn {
+      &__submit-btn {
         background-color: #38AEF0;
         color: #ffffff;
         width: 100px;
         height: 50px;
         padding: 0 30px;
         margin-left: 15px;
-        margin-right: 0;
       }
     }
   }

@@ -25,11 +25,14 @@
     }
     &__edit-btn {
       height: 40px;
-      color: #38AEF0;
       line-height: 40px;
       border: solid thin #38AEF0;
       margin-top: 28px;
       padding: 0px 20px;
+      a {
+        color: #38AEF0;
+        text-decoration: none;
+      }
     }
   }
 

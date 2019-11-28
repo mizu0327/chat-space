@@ -39,16 +39,20 @@
     box-sizing: border-box;
     &__group {
       padding: 20px 20px 40px;
-      color: #ffffff;
+      a {
+        text-decoration: none;
+      }
       &--name {
         font-size: 15px;
         font-weight: bold;
         margin-bottom: 5px;
+        color: #ffffff;
       }
       &--latest-message {
         font-size: 11px;
         font-weight: bold;
         margin-bottom: 40px;
+        color: #ffffff;
       }
     }
   }

@@ -6,20 +6,22 @@
       .main_chat__main-header__left-box__member-list
         Member:
         .main_chat__main-header__left-box__member-list__member
-          = @group.users.name
+          - @group.users.each do |user|
+            = user.name
     .main_chat__main-header__edit-btn
       Edit
 
 
   .main_chat__messages
-    .main_chat__messages__message
-      .main_chat__messages__message__upper-info
-        .main_chat__messages__message__upper-info__talker
-          @message.user
-        .main_chat__messages__message__upper-info__date
-          @message.timestamps
-      .main_chat__messages__message__text
-        @message.body
+    - @messages.each do |message|
+      .main_chat__messages__message
+        .main_chat__messages__message__upper-info
+          .main_chat__messages__message__upper-info__talker
+            = message.user.name
+          .main_chat__messages__message__upper-info__date
+            = message.created_at
+        .main_chat__messages__message__text
+          = message.body
 
   .main_chat__message_form
     .main_chat__message_form__new-message
@@ -30,5 +32,5 @@
             = f.label :image, class: 'image' do
               = icon('fa', 'images', class: 'open-file')
               = f.file_field :image, class: 'hidden'
-      .main_chat__message_form__new-message__submit-btn
-        = f.submit 'Send', class: 'submit-btn'
+          .main_chat__message_form__new-message__submit-btn
+            = f.submit 'Send', class: 'submit-btn'

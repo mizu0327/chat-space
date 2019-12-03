@@ -12,9 +12,9 @@ $(function(){
                       </div>
                     <div class="main_chat__messages__message__text">
                       ${message.body}
-                      </div>`
-                      + imageHTML +
-                    `</div>`;
+                      </div>
+                      ${ imageHTML }
+                    </div>`;
     return html;
   };
 

@@ -44,6 +44,7 @@
     overflow: scroll;
     box-sizing: border-box;
     &__message {
+      padding-bottom: 40px;
       &__upper-info {
         padding-top: 6px;
         display: flex;

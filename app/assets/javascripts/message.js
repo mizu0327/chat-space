@@ -1,8 +1,7 @@
 $(function(){
   function buildHTML(message) {
-    console.log(message);
-    if (message.image) {
-      var html = `<div class="main_chat__messages__message">
+    var imageHTML = message.image ?  ` <img src="${ message.image }" class="posts__image" />` : "";
+    var html = `<div class="main_chat__messages__message">
                     <div class="main_chat__messages__message__upper-info">
                       <div class="main_chat__messages__message__upper-info__talker">
                         ${message.user_name}
@@ -13,24 +12,9 @@ $(function(){
                       </div>
                     <div class="main_chat__messages__message__text">
                       ${message.body}
-                      </div>
-                      <img src=${message.image} >
-                    </div>`
-    } else {
-      var html = `<div class="main_chat__messages__message">
-                    <div class="main_chat__messages__message__upper-info">
-                      <div class="main_chat__messages__message__upper-info__talker">
-                        ${message.user_name}
-                        </div>
-                      <div class="main_chat__messages__message__upper-info__date">
-                        ${message.date}
-                        </div>
-                      </div>
-                    <div class="main_chat__messages__message__text">
-                      ${message.body}
-                      </div>
-                    </div>`
-    }
+                      </div>`
+                      + imageHTML +
+                    `</div>`;
     return html;
   };
 

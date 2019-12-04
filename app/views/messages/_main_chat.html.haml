@@ -15,7 +15,7 @@
 
   .main_chat__messages
     - @messages.each do |message|
-      .main_chat__messages__message
+      .main_chat__messages__message{ data: { message_id: message.id } }
         .main_chat__messages__message__upper-info
           .main_chat__messages__message__upper-info__talker
             = message.user.name

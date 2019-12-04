@@ -41,5 +41,29 @@ $(function(){
     });
     return false;
   });
+
+  var reloadMessages = function() {
+    if (window.location.href.match(/\/groups\/\d+\/messages/)){
+    var last_message_id = $(".main_chat__messages__message:last").data("message-id");
+    $.ajax({
+      url: 'api/messages',
+      type: 'get',
+      dataType: 'json',
+      data: {id: last_message_id}
+    })
+    .done(function(messages) {
+      var insertHTML = '';
+      $.each(messages, function(i, message) {
+        insertHTML += buildHTML(message)
+      });
+      $('.messages').append(insertHTML);
+      $('.main_chat__messages').animate({ scrollTop: $('.main_chat__messages')[0].scrollHeight});
+      })
+    .fail(function() {
+      alert('error');
+      });
+    }
+  };
+  setInterval(reloadMessages, 7000);
 });
 

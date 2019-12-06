@@ -57,7 +57,9 @@ $(function(){
         insertHTML += buildHTML(message)
       });
       $('.messages').append(insertHTML);
-      $('.main_chat__messages').animate({ scrollTop: $('.main_chat__messages')[0].scrollHeight});
+      if (last_message_id !== $(".main_chat__messages__message:last").data("message-id")){
+        $('.main_chat__messages').animate({ scrollTop: $('.main_chat__messages')[0].scrollHeight, ‘fast’});
+      }
       })
     .fail(function() {
       alert('error');

@@ -20,7 +20,7 @@
           .main_chat__messages__message__upper-info__talker
             = message.user.name
           .main_chat__messages__message__upper-info__date
-            = message.created_at
+            = message.created_at.strftime("%Y年%m月%d日 %H時%M分")
         .main_chat__messages__message__text
           = message.body
         .main_chat__messages__message__image

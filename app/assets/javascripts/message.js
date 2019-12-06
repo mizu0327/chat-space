@@ -1,6 +1,6 @@
 $(function(){
   function buildHTML(message) {
-    var imageHTML = message.image ?  ` <img src="${ message.image.url }" class="posts__image" />` : "";
+    var imageHTML = message.image ?  ` <img src="${ message.image }" />` : "";
     var html = `<div class="main_chat__messages__message">
                     <div class="main_chat__messages__message__upper-info">
                       <div class="main_chat__messages__message__upper-info__talker">

@@ -33,7 +33,7 @@
           = f.text_field :body, class: 'message-text', placeholder: 'type a message'
           .form__mask
             = f.label :image, class: 'image' do
-              = icon('fa', 'images', class: 'open-file')
+              = icon('far', 'image', class: 'open-file')
               = f.file_field :image, class: 'hidden'
           .main_chat__message_form__new-message__submit-btn
             = f.submit 'Send', class: 'submit-btn'

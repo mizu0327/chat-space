@@ -58,7 +58,7 @@ $(function(){
       });
       $('.messages').append(insertHTML);
       if (last_message_id !== $(".main_chat__messages__message:last").data("message-id")){
-        $('.main_chat__messages').animate({ scrollTop: $('.main_chat__messages')[0].scrollHeight, ‘fast’});
+        $('.main_chat__messages').animate({ scrollTop: $('.main_chat__messages')[0].scrollHeight });
       }
       })
     .fail(function() {
